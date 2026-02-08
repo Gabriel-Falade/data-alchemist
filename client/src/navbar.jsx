@@ -21,6 +21,7 @@ const Navbar = () => {
             <li><Link to="/analytics">Analytics</Link></li>
             <li><Link to="/statistics">Statistics</Link></li>
             <li><Link to="/visualize">Visualize</Link></li>
+            <li><Link to="/wiki">Wiki</Link></li>
             <li>
                 <button onClick={() => setIsDark(!isDark)} className="theme-toggle">
                     {isDark ? 'LIGHT' : 'DARK'}
