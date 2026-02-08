@@ -33,6 +33,24 @@ def get_doc_by_id(documents, doc_id):
             return doc
     return None
 
+def _normalize_contradiction_result(result):
+    """Normalize Gemini output into a stable dict shape."""
+    if isinstance(result, list) and result:
+        for item in result:
+            if isinstance(item, dict):
+                result = item
+                break
+
+    if not isinstance(result, dict):
+        result = {}
+
+    return {
+        "doc1_claim": result.get("doc1_claim") or "Unable to extract",
+        "doc2_claim": result.get("doc2_claim") or "Unable to extract",
+        "conflict_summary": result.get("conflict_summary") or "Documents have conflicting information"
+    }
+
+
 def extract_contradiction_details(doc1, doc2):
     """
     Use Gemini to extract specific claims that contradict each other
@@ -67,15 +85,11 @@ Return this exact JSON format:
                 text = text[4:].strip()
 
         result = json.loads(text)
-        return result
+        return _normalize_contradiction_result(result)
 
     except Exception as e:
         print(f"  API Error: {e}")
-        return {
-            "doc1_claim": "Unable to extract",
-            "doc2_claim": "Unable to extract",
-            "conflict_summary": "Documents have conflicting information"
-        }
+        return _normalize_contradiction_result({})
 
 def detect_clusters(graph, documents):
     """

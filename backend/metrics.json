@@ -5,16 +5,16 @@
     "total_size_kb": 26.28
   },
   "cognitive_load": {
-    "reduction_percent": 81.8,
-    "obsolete_docs": 3,
+    "reduction_percent": 63.6,
+    "obsolete_docs": 1,
     "duplicates": 1,
     "contradictions": 5,
-    "total_problematic": 9
+    "total_problematic": 7
   },
   "storage_savings": {
-    "total_savings_kb": 6.8,
-    "savings_percent": 25.9,
-    "obsolete_savings_kb": 5.92,
+    "total_savings_kb": 3.47,
+    "savings_percent": 13.2,
+    "obsolete_savings_kb": 2.59,
     "duplicate_savings_kb": 0.88
   },
   "knowledge_preservation": {
@@ -22,5 +22,5 @@
     "clusters_formed": 1,
     "avg_connections_per_doc": 1.4
   },
-  "impact_statement": "By automatically identifying 81% of documents as obsolete, duplicate, or contradictory, Transmute reduces cognitive load for teams. It preserves 15 knowledge relationships while enabling 6.8 KB of storage optimization through smart archiving."
+  "impact_statement": "By automatically identifying 63% of documents as obsolete, duplicate, or contradictory, Transmute reduces cognitive load for teams. It preserves 15 knowledge relationships while enabling 3.5 KB of storage optimization through smart archiving."
 }
