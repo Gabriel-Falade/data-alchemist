@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "total_documents": 5,
+    "total_words": 314,
+    "total_size_kb": 1.84
+  },
+  "cognitive_load": {
+    "reduction_percent": 40.0,
+    "obsolete_docs": 1,
+    "duplicates": 0,
+    "contradictions": 1,
+    "total_problematic": 2
+  },
+  "storage_savings": {
+    "total_savings_kb": 0.23,
+    "savings_percent": 12.7,
+    "obsolete_savings_kb": 0.23,
+    "duplicate_savings_kb": 0.0
+  },
+  "knowledge_preservation": {
+    "relationships_discovered": 4,
+    "clusters_formed": 1,
+    "avg_connections_per_doc": 0.8
+  },
+  "impact_statement": "By automatically identifying 40% of documents as obsolete, duplicate, or contradictory, Data Alchemist reduces cognitive load for teams. It preserves 4 knowledge relationships while enabling 0.2 KB of storage optimization through smart archiving."
+}

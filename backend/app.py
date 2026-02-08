@@ -86,6 +86,16 @@ def get_stats():
     except FileNotFoundError as e:
         return jsonify({"error": str(e)}), 404
 
+@app.route('/api/metrics', methods=['GET'])
+def get_metrics():
+    """Return sustainability metrics (cognitive load, storage savings)"""
+    try:
+        with open('metrics.json', 'r') as f:
+            metrics = json.load(f)
+        return jsonify(metrics)
+    except FileNotFoundError:
+        return jsonify({"error": "Metrics not found. Run metrics.py first."}), 404
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
@@ -106,6 +116,7 @@ def index():
             "/api/documents": "Get all processed documents",
             "/api/insights": "Get contradictions and obsolete documents",
             "/api/stats": "Get overall statistics",
+            "/api/metrics": "Get sustainability metrics (NEW!)",
             "/api/health": "Health check"
         },
         "usage": "Visit http://localhost:5000/api/graph to get started"
@@ -120,6 +131,7 @@ if __name__ == '__main__':
     print("  - GET /api/documents  - All documents")
     print("  - GET /api/insights   - Contradictions & obsolete docs")
     print("  - GET /api/stats      - Statistics")
+    print("  - GET /api/metrics    - Sustainability metrics")
     print("  - GET /api/health     - Health check")
     print("\nPress CTRL+C to stop")
     print("=" * 60)
