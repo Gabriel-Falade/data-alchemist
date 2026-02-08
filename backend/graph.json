@@ -1,0 +1,74 @@
+{
+  "nodes": [
+    {
+      "id": "doc_1",
+      "label": "Project Alpha - Kickoff",
+      "date": "2024-01-15",
+      "content": "# Project Alpha - Kickoff\n**Date:** 2024-01-15\n\n## Overview\nWe're launching Project Alpha with a microservices architecture. The team has decided to use MongoDB for primary data storage due to its flexibility with unstructured data.\n\n## Key Decisions\n- **Database:** MongoDB (document store)\n- **Architecture:** Microservices\n- **Deployment:** AWS ECS\n- **Timeline:** 6 months\n\n## Team\nEngineering lead: Sarah Chen\nProduct: Mike Davis\n\n## Budget\nInitial budget: $50,000 for infrastructure\n",
+      "word_count": 70
+    },
+    {
+      "id": "doc_2",
+      "label": "Security Policy Update",
+      "date": "2024-02-10",
+      "content": "# Security Policy Update\n**Date:** 2024-02-10\n\n## New Requirements\nAll services must implement:\n- OAuth 2.0 authentication\n- Encrypted data at rest\n- Regular security audits\n\n## Compliance\nWe need to be SOC 2 compliant by Q3 2024.\n\n## Team Changes\nNew security engineer: Alex Kumar (starts March 1)\n",
+      "word_count": 49
+    },
+    {
+      "id": "doc_3",
+      "label": "Architecture Review - March",
+      "date": "2024-03-20",
+      "content": "# Architecture Review - March\n**Date:** 2024-03-20\n\n## Performance Issues\nAfter two months, we're seeing significant performance bottlenecks with our MongoDB setup. Query times have increased 300%.\n\n## New Recommendation\nThe team now recommends migrating to PostgreSQL with proper indexing. The \"flexibility\" of MongoDB has actually created schema chaos.\n\n## Action Items\n- Evaluate PostgreSQL migration cost\n- Prototype new schema design\n- Timeline: 2 month migration window\n\n**Note:** This contradicts our January decision but is necessary for scale.\n",
+      "word_count": 79
+    },
+    {
+      "id": "doc_4",
+      "label": "Q1 Retrospective",
+      "date": "2024-04-05",
+      "content": "# Q1 Retrospective\n**Date:** 2024-04-05\n\n## What Went Well\n- Microservices architecture is working smoothly\n- Team collaboration is strong\n- Security implementation on track\n\n## Challenges\n- Database performance concerns\n- Deployment complexity higher than expected\n- Need better monitoring tools\n\n## Shoutouts\nGreat work by Sarah Chen on the API gateway!\nMike Davis crushed the product roadmap.\n",
+      "word_count": 59
+    },
+    {
+      "id": "doc_5",
+      "label": "Emergency Budget Meeting",
+      "date": "2024-05-12",
+      "content": "# Emergency Budget Meeting\n**Date:** 2024-05-12\n\n## Budget Reduction\nDue to market conditions, Project Alpha budget is reduced to $30,000 (was $50,000).\n\n## Impact\n- Infrastructure migration delayed\n- 1 contractor position eliminated\n- AWS costs must be optimized immediately\n\n## Revised Timeline\nOriginal 6-month timeline now extended to 9 months.\n\n**This supersedes the January budget allocation.**\n",
+      "word_count": 57
+    }
+  ],
+  "edges": [
+    {
+      "source": "doc_1",
+      "target": "doc_5",
+      "type": "updates",
+      "explanation": "Document 2 updates the budget and timeline outlined in Document 1.",
+      "similarity": 0.5899568927745491
+    },
+    {
+      "source": "doc_1",
+      "target": "doc_4",
+      "type": "relates_to",
+      "explanation": "The Q1 retrospective is a follow-up on the Project Alpha kickoff, discussing progress and challenges faced in the first quarter.",
+      "similarity": 0.5396297557071543
+    },
+    {
+      "source": "doc_1",
+      "target": "doc_3",
+      "type": "contradicts",
+      "explanation": "Document 2 contradicts Document 1 by recommending a change in the database from MongoDB to PostgreSQL due to performance issues that arose after the initial kickoff meeting.",
+      "similarity": 0.5342563472103934
+    },
+    {
+      "source": "doc_2",
+      "target": "doc_4",
+      "type": "relates_to",
+      "explanation": "The Q1 retrospective references the security implementation mentioned in the security policy update.",
+      "similarity": 0.41740023167258
+    }
+  ],
+  "metadata": {
+    "total_documents": 5,
+    "total_relationships": 4,
+    "similarity_threshold": 0.4
+  }
+}
