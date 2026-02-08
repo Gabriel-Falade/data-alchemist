@@ -1,0 +1,78 @@
+.upload-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding-top: 80px; /* Offset for fixed navbar */
+}
+
+.upload-container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'TASA Orbiter Display', sans-serif;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.upload-header h2 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.upload-header p {
+  opacity: 0.6;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+/* The Drop Zone */
+.drop-zone {
+  border: 1px dashed var(--text-color);
+  background: rgba(var(--bg-rgb), 0.05);
+  padding: 3rem;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.drop-zone.dragging {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-style: solid;
+}
+
+.drop-zone-content .upload-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.drop-zone-content p {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.drop-zone-content span {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-footer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  opacity: 0.4;
+  text-transform: uppercase;
+  color: var(--text-color);
+}

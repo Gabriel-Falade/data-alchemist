@@ -1,0 +1,108 @@
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 0 2rem;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 50px 50px; /* Size of the grid squares */
+  background-position: center;
+  
+  animation: gridMove 10s linear infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 20%, var(--bg-color) 100%);
+  pointer-events: none; /* Allows you to still click buttons */
+}
+
+.hero-container {
+  max-width: 900px;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--text-color);
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: 'TASA Orbiter Display', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem); 
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .accent {
+  display: block;
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn-primary {
+  padding: 12px 28px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  font-family: 'TASA Orbiter Display', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-secondary {
+  padding: 12px 28px;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-family: 'TASA Orbiter Display', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

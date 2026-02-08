@@ -1,0 +1,76 @@
+.visualize-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'TASA Orbiter Display', sans-serif;
+  overflow: hidden;
+}
+
+.viz-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  border: 1px solid var(--border-color);
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.graph-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Edge Styles */
+.edge-line {
+  stroke: var(--text-color);
+  stroke-width: 1;
+  opacity: 0.3;
+}
+
+.edge-line.contradicts {
+  stroke: #ff4757;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5; /* Dashed line for conflict */
+  opacity: 1;
+}
+
+/* Node Styles */
+.node-dot {
+  fill: var(--bg-color);
+  stroke: var(--text-color);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.node-group:hover .node-dot,
+.node-dot.active {
+  fill: var(--text-color);
+}
+
+.node-text {
+  fill: var(--text-color);
+  font-size: 10px;
+  text-anchor: middle;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+/* Side Drawer */
+.viz-drawer {
+  position: absolute;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: var(--bg-color);
+  border-left: 1px solid var(--border-color);
+  transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  padding: 2rem;
+}
+
+.viz-drawer.open {
+  right: 0;
+}
